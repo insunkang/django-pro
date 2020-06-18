@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>디테일페이지</h1>
+<br>
+<p>{{movie.pk}}번째 영화</p>
+<p>{{movie.title}}</p>
+<p>{{movie.title_en}}</p>
+<p>{{movie.audience}}</p>
+<p>{{movie.open_date}}</p>
+<p>{{movie.genre}}</p>
+<p>{{movie.watch_grade}}</p>
+<p>{{movie.score}}</p>
+<p>{{movie.poster_url}}</p>
+<p>{{movie.description}}</p>
+<hr>
+<a href="{% url 'movies:update' movie.pk %}">영화정보수정</a>
+<a href="{% url 'movies:delete' movie.pk %}">영화정보삭제</a>
+{% endblock %}

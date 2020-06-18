@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block body %}
+  {% if request.resolver_match.url_name == 'new' %}
+    <h1>영화 생성</h1>
+  {% else %}
+    <h1>영화 수정</h1>
+  {% endif %}
+  <hr>
+  <form action="" method="POST">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      {% buttons %}
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+      {% endbuttons %}
+  <a href="{% url 'movies:index' %}">[back]</a>
+  </form>
+
+{% endblock %}
